@@ -8,11 +8,16 @@
 
 import Cocoa
 
-class ViewController: NSViewController {
+class MainViewController: NSViewController {
 
+    @IBOutlet var mainTextView: NSTextView!
+    @IBOutlet var inputTextField: NSTextField!
+    @IBOutlet var sendButton: NSButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        
         // Do any additional setup after loading the view.
     }
 
@@ -22,6 +27,10 @@ class ViewController: NSViewController {
         }
     }
 
-
+    @IBAction func onSend(sender: AnyObject) {
+        NSLog("send " + self.inputTextField.stringValue)
+    }
+    
+    
 }
 
