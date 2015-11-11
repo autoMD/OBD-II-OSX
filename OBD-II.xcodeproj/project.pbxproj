@@ -11,7 +11,7 @@
 		3C0EB6691BE69DBE00220B79 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0EB6681BE69DBE00220B79 /* MainViewController.swift */; };
 		3C0EB66B1BE69DBE00220B79 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C0EB66A1BE69DBE00220B79 /* Assets.xcassets */; };
 		3C0EB66E1BE69DBE00220B79 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C0EB66C1BE69DBE00220B79 /* Main.storyboard */; };
-		3C0EB6761BE6AA4600220B79 /* String+OBD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0EB6751BE6AA4600220B79 /* String+OBD.swift */; };
+		3C1808C61BE74D24009E9A02 /* OBDII.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1808C51BE74D24009E9A02 /* OBDII.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,7 +21,7 @@
 		3C0EB66A1BE69DBE00220B79 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3C0EB66D1BE69DBE00220B79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3C0EB66F1BE69DBE00220B79 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3C0EB6751BE6AA4600220B79 /* String+OBD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+OBD.swift"; sourceTree = "<group>"; };
+		3C1808C51BE74D24009E9A02 /* OBDII.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OBDII.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,11 +55,11 @@
 			isa = PBXGroup;
 			children = (
 				3C0EB6661BE69DBE00220B79 /* AppDelegate.swift */,
-				3C0EB6681BE69DBE00220B79 /* MainViewController.swift */,
 				3C0EB66A1BE69DBE00220B79 /* Assets.xcassets */,
 				3C0EB66C1BE69DBE00220B79 /* Main.storyboard */,
 				3C0EB66F1BE69DBE00220B79 /* Info.plist */,
-				3C0EB6751BE6AA4600220B79 /* String+OBD.swift */,
+				3C1808C51BE74D24009E9A02 /* OBDII.swift */,
+				3C0EB6681BE69DBE00220B79 /* MainViewController.swift */,
 			);
 			path = "OBD-II";
 			sourceTree = "<group>";
@@ -136,7 +136,7 @@
 			files = (
 				3C0EB6691BE69DBE00220B79 /* MainViewController.swift in Sources */,
 				3C0EB6671BE69DBE00220B79 /* AppDelegate.swift in Sources */,
-				3C0EB6761BE6AA4600220B79 /* String+OBD.swift in Sources */,
+				3C1808C61BE74D24009E9A02 /* OBDII.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
