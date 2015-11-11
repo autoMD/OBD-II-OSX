@@ -28,11 +28,6 @@ class OBDII : NSObject, NSStreamDelegate {
     private var inStream: NSInputStream?
     private var outStream: NSOutputStream?
     
-    override init() {
-        super.init()
-
-    }
-
     func open() {
         self.close()
         
@@ -54,40 +49,30 @@ class OBDII : NSObject, NSStreamDelegate {
         self.outStream?.open()
     }
     
-    func write(data: String) -> Bool {
-        if data.isEmpty || self.outStream ==  nil {
-            return false
-        }
-        
-        if self.outStream!.streamStatus != NSStreamStatus.Open {
-            return false
-        }
-        
-        if !self.outStream!.hasSpaceAvailable {
-            return false
-        }
-        
-        let length = data.lengthOfBytesUsingEncoding(NSASCIIStringEncoding)
-        return self.outStream!.write(data, maxLength: length) == length
-    }
-    
     func close() {
         self.inStream?.close()
         self.outStream?.close()
     }
     
-    func stream(aStream: NSStream, handleEvent eventCode: NSStreamEvent) {
-        
-        if(aStream == self.inStream) {
-            self.inputStreamEvent(eventCode)
-        } else if(aStream == self.outStream) {
-            self.outputStreamEvent(eventCode)
+    func write(data: String) -> Bool {
+        if data.isEmpty || self.outStream ==  nil {
+            return false
         }
+        
+        if self.outStream!.streamStatus != NSStreamStatus.Open || !self.outStream!.hasSpaceAvailable {
+            return false
+        }
+ 
+        let length = data.lengthOfBytesUsingEncoding(NSASCIIStringEncoding)
+        return self.outStream!.write(data, maxLength: length) == length
     }
     
-    func inputStreamEvent(event: NSStreamEvent) {
-        NSLog("\(event)")
-        switch event {
+    func stream(aStream: NSStream, handleEvent eventCode: NSStreamEvent) {
+        if aStream == self.outStream {
+            return
+        }
+        
+        switch eventCode {
         case NSStreamEvent.OpenCompleted:
             self.delegate?.didConnect(self)
             break
@@ -104,11 +89,7 @@ class OBDII : NSObject, NSStreamDelegate {
             break
         }
     }
-    
-    func outputStreamEvent(event: NSStreamEvent) {
-        
-    }
-    
+
     func processInputStreamData() {
         guard let stream = self.inStream else {
             return
