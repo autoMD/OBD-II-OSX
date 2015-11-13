@@ -12,7 +12,23 @@
 		3C0EB66B1BE69DBE00220B79 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C0EB66A1BE69DBE00220B79 /* Assets.xcassets */; };
 		3C0EB66E1BE69DBE00220B79 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C0EB66C1BE69DBE00220B79 /* Main.storyboard */; };
 		3C1808C61BE74D24009E9A02 /* OBDII.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1808C51BE74D24009E9A02 /* OBDII.swift */; };
+		3CC4A9981BF6869600044B42 /* OBDIIPID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC4A9971BF6869600044B42 /* OBDIIPID.swift */; };
+		3CC4A9A01BF688E500044B42 /* OBD_IITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC4A99F1BF688E500044B42 /* OBD_IITests.swift */; };
+		3CC4A9AF1BF6893900044B42 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0EB6661BE69DBE00220B79 /* AppDelegate.swift */; };
+		3CC4A9B01BF6893900044B42 /* OBDII.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1808C51BE74D24009E9A02 /* OBDII.swift */; };
+		3CC4A9B11BF6893900044B42 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0EB6681BE69DBE00220B79 /* MainViewController.swift */; };
+		3CC4A9B51BF6893900044B42 /* OBDIIPID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC4A9971BF6869600044B42 /* OBDIIPID.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3CC4A9A21BF688E500044B42 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3C0EB65B1BE69DBE00220B79 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3C0EB6621BE69DBE00220B79;
+			remoteInfo = "OBD-II";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		3C0EB6631BE69DBE00220B79 /* OBD-II.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OBD-II.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -22,10 +38,21 @@
 		3C0EB66D1BE69DBE00220B79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3C0EB66F1BE69DBE00220B79 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3C1808C51BE74D24009E9A02 /* OBDII.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OBDII.swift; sourceTree = "<group>"; };
+		3CC4A9971BF6869600044B42 /* OBDIIPID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OBDIIPID.swift; sourceTree = "<group>"; };
+		3CC4A99D1BF688E500044B42 /* OBD-IITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "OBD-IITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3CC4A99F1BF688E500044B42 /* OBD_IITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OBD_IITests.swift; sourceTree = "<group>"; };
+		3CC4A9A11BF688E500044B42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		3C0EB6601BE69DBE00220B79 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3CC4A99A1BF688E500044B42 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -39,6 +66,7 @@
 			isa = PBXGroup;
 			children = (
 				3C0EB6651BE69DBE00220B79 /* OBD-II */,
+				3CC4A99E1BF688E500044B42 /* OBD-IITests */,
 				3C0EB6641BE69DBE00220B79 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -47,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				3C0EB6631BE69DBE00220B79 /* OBD-II.app */,
+				3CC4A99D1BF688E500044B42 /* OBD-IITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -60,8 +89,18 @@
 				3C0EB66F1BE69DBE00220B79 /* Info.plist */,
 				3C1808C51BE74D24009E9A02 /* OBDII.swift */,
 				3C0EB6681BE69DBE00220B79 /* MainViewController.swift */,
+				3CC4A9971BF6869600044B42 /* OBDIIPID.swift */,
 			);
 			path = "OBD-II";
+			sourceTree = "<group>";
+		};
+		3CC4A99E1BF688E500044B42 /* OBD-IITests */ = {
+			isa = PBXGroup;
+			children = (
+				3CC4A99F1BF688E500044B42 /* OBD_IITests.swift */,
+				3CC4A9A11BF688E500044B42 /* Info.plist */,
+			);
+			path = "OBD-IITests";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -84,6 +123,24 @@
 			productReference = 3C0EB6631BE69DBE00220B79 /* OBD-II.app */;
 			productType = "com.apple.product-type.application";
 		};
+		3CC4A99C1BF688E500044B42 /* OBD-IITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3CC4A9A41BF688E500044B42 /* Build configuration list for PBXNativeTarget "OBD-IITests" */;
+			buildPhases = (
+				3CC4A9991BF688E500044B42 /* Sources */,
+				3CC4A99A1BF688E500044B42 /* Frameworks */,
+				3CC4A99B1BF688E500044B42 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3CC4A9A31BF688E500044B42 /* PBXTargetDependency */,
+			);
+			name = "OBD-IITests";
+			productName = "OBD-IITests";
+			productReference = 3CC4A99D1BF688E500044B42 /* OBD-IITests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -96,6 +153,10 @@
 				TargetAttributes = {
 					3C0EB6621BE69DBE00220B79 = {
 						CreatedOnToolsVersion = 7.1;
+					};
+					3CC4A99C1BF688E500044B42 = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = 3C0EB6621BE69DBE00220B79;
 					};
 				};
 			};
@@ -113,6 +174,7 @@
 			projectRoot = "";
 			targets = (
 				3C0EB6621BE69DBE00220B79 /* OBD-II */,
+				3CC4A99C1BF688E500044B42 /* OBD-IITests */,
 			);
 		};
 /* End PBXProject section */
@@ -127,6 +189,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3CC4A99B1BF688E500044B42 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -136,11 +205,32 @@
 			files = (
 				3C0EB6691BE69DBE00220B79 /* MainViewController.swift in Sources */,
 				3C0EB6671BE69DBE00220B79 /* AppDelegate.swift in Sources */,
+				3CC4A9981BF6869600044B42 /* OBDIIPID.swift in Sources */,
 				3C1808C61BE74D24009E9A02 /* OBDII.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3CC4A9991BF688E500044B42 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3CC4A9AF1BF6893900044B42 /* AppDelegate.swift in Sources */,
+				3CC4A9B51BF6893900044B42 /* OBDIIPID.swift in Sources */,
+				3CC4A9B01BF6893900044B42 /* OBDII.swift in Sources */,
+				3CC4A9A01BF688E500044B42 /* OBD_IITests.swift in Sources */,
+				3CC4A9B11BF6893900044B42 /* MainViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3CC4A9A31BF688E500044B42 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3C0EB6621BE69DBE00220B79 /* OBD-II */;
+			targetProxy = 3CC4A9A21BF688E500044B42 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		3C0EB66C1BE69DBE00220B79 /* Main.storyboard */ = {
@@ -258,6 +348,32 @@
 			};
 			name = Release;
 		};
+		3CC4A9A51BF688E500044B42 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "OBD-IITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "at.mani1337.OBD-IITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OBD-II.app/Contents/MacOS/OBD-II";
+			};
+			name = Debug;
+		};
+		3CC4A9A61BF688E500044B42 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "OBD-IITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "at.mani1337.OBD-IITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OBD-II.app/Contents/MacOS/OBD-II";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -275,6 +391,15 @@
 			buildConfigurations = (
 				3C0EB6731BE69DBE00220B79 /* Debug */,
 				3C0EB6741BE69DBE00220B79 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3CC4A9A41BF688E500044B42 /* Build configuration list for PBXNativeTarget "OBD-IITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3CC4A9A51BF688E500044B42 /* Debug */,
+				3CC4A9A61BF688E500044B42 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
