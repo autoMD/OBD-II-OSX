@@ -10,22 +10,22 @@ import XCTest
 
 class OBD_IITests: XCTestCase {
     
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    let entry = OBDIIPIDEntry(mode: 0x01, pid: 0x1D, responseLength: 1, identifier: OBDIISpeed) { data in
+        return Double(data[0])
     }
     
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
+    func testDebug() {
+        let res = "AT Z\r>01 01>34".split(">")
+        for i in res {
+            NSLog(i)
+        }
     }
     
     func testCreateOBDIIMessage() {
-        let entry = OBDIIPIDEntry(mode: 0x01, pid: 0x1D, responseLength: 1, identifier: OBDIISpeed) { data in
-            return Double(data[0])
-        }
-        
-        XCTAssert(entry.createMessage() == "01 1D 1\r")
+        XCTAssert(entry.createMessage() == "01 1D 1")
+    }
+    
+    func testParseOBDIIMessage() {
         XCTAssert((try? entry.parseMessage("41 1D 10")) == 16.0)
     }
 }

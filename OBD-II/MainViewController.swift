@@ -28,7 +28,11 @@ class MainViewController: NSViewController, NSTextFieldDelegate, OBDIIDelegate {
     }
 
     @IBAction func onSend(sender: AnyObject) {
-        let text = self.inputTextField.stringValue
+        var text = self.inputTextField.stringValue
+        if text == "throttle" {
+            text = try! OBDIIPID.createMessageForIdentifier(OBDIIThrottleValue)
+        }
+        
         if obd.write(text) {
             self.inputTextField.stringValue = ""
         } else {
@@ -72,6 +76,19 @@ class MainViewController: NSViewController, NSTextFieldDelegate, OBDIIDelegate {
     func didReceivedData(obd: OBDII, string: String) {
         self.appendOBDLog(string)
     }
+    
+    func obdReadyStateChanged(obd: OBDII, readyState: Bool) {
+        self.appendLogText("OBD ready state changed \(readyState)")
+        
+        if readyState {
+            try? obd.write(OBDIIPID.createMessageForIdentifier(OBDIIThrottleValue))
+        }
+    }
+    
+    func didReceivedOBDValue(obd: OBDII, identifier: String, value: Double) {
+        self.appendLogText("OBD Value, \(identifier): \(value)")
+    }
+    
     func connectInOneSecond() {
         self.appendLogText("Connection will be reopened in 1 second")
         NSTimer.scheduledTimerWithTimeInterval(1.0, target: self.obd, selector: Selector("open"), userInfo: nil, repeats: false)

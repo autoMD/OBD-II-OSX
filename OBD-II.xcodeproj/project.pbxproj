@@ -11,13 +11,17 @@
 		3C0EB6691BE69DBE00220B79 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0EB6681BE69DBE00220B79 /* MainViewController.swift */; };
 		3C0EB66B1BE69DBE00220B79 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C0EB66A1BE69DBE00220B79 /* Assets.xcassets */; };
 		3C0EB66E1BE69DBE00220B79 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C0EB66C1BE69DBE00220B79 /* Main.storyboard */; };
-		3C1808C61BE74D24009E9A02 /* OBDII.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1808C51BE74D24009E9A02 /* OBDII.swift */; };
-		3CC4A9981BF6869600044B42 /* OBDIIPID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC4A9971BF6869600044B42 /* OBDIIPID.swift */; };
+		3C2B597E1C2B5CDB0042EB73 /* OBDII.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2B59791C2B5CDB0042EB73 /* OBDII.swift */; };
+		3C2B597F1C2B5CDB0042EB73 /* OBDIIPID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2B597A1C2B5CDB0042EB73 /* OBDIIPID.swift */; };
+		3C2B59801C2B5CDB0042EB73 /* Array+Remove.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2B597C1C2B5CDB0042EB73 /* Array+Remove.swift */; };
+		3C2B59811C2B5CDB0042EB73 /* String+Split.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2B597D1C2B5CDB0042EB73 /* String+Split.swift */; };
+		3C2B59821C2B5CEF0042EB73 /* OBDII.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2B59791C2B5CDB0042EB73 /* OBDII.swift */; };
+		3C2B59831C2B5CEF0042EB73 /* OBDIIPID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2B597A1C2B5CDB0042EB73 /* OBDIIPID.swift */; };
+		3C2B59841C2B5CEF0042EB73 /* Array+Remove.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2B597C1C2B5CDB0042EB73 /* Array+Remove.swift */; };
+		3C2B59851C2B5CEF0042EB73 /* String+Split.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2B597D1C2B5CDB0042EB73 /* String+Split.swift */; };
 		3CC4A9A01BF688E500044B42 /* OBD_IITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC4A99F1BF688E500044B42 /* OBD_IITests.swift */; };
 		3CC4A9AF1BF6893900044B42 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0EB6661BE69DBE00220B79 /* AppDelegate.swift */; };
-		3CC4A9B01BF6893900044B42 /* OBDII.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1808C51BE74D24009E9A02 /* OBDII.swift */; };
 		3CC4A9B11BF6893900044B42 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0EB6681BE69DBE00220B79 /* MainViewController.swift */; };
-		3CC4A9B51BF6893900044B42 /* OBDIIPID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC4A9971BF6869600044B42 /* OBDIIPID.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,8 +41,10 @@
 		3C0EB66A1BE69DBE00220B79 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3C0EB66D1BE69DBE00220B79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3C0EB66F1BE69DBE00220B79 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3C1808C51BE74D24009E9A02 /* OBDII.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OBDII.swift; sourceTree = "<group>"; };
-		3CC4A9971BF6869600044B42 /* OBDIIPID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OBDIIPID.swift; sourceTree = "<group>"; };
+		3C2B59791C2B5CDB0042EB73 /* OBDII.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OBDII.swift; sourceTree = "<group>"; };
+		3C2B597A1C2B5CDB0042EB73 /* OBDIIPID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OBDIIPID.swift; sourceTree = "<group>"; };
+		3C2B597C1C2B5CDB0042EB73 /* Array+Remove.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Remove.swift"; sourceTree = "<group>"; };
+		3C2B597D1C2B5CDB0042EB73 /* String+Split.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Split.swift"; sourceTree = "<group>"; };
 		3CC4A99D1BF688E500044B42 /* OBD-IITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "OBD-IITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CC4A99F1BF688E500044B42 /* OBD_IITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OBD_IITests.swift; sourceTree = "<group>"; };
 		3CC4A9A11BF688E500044B42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -83,15 +89,33 @@
 		3C0EB6651BE69DBE00220B79 /* OBD-II */ = {
 			isa = PBXGroup;
 			children = (
+				3C2B59781C2B5CDB0042EB73 /* Core */,
+				3C2B597B1C2B5CDB0042EB73 /* Utility */,
 				3C0EB6661BE69DBE00220B79 /* AppDelegate.swift */,
 				3C0EB66A1BE69DBE00220B79 /* Assets.xcassets */,
 				3C0EB66C1BE69DBE00220B79 /* Main.storyboard */,
 				3C0EB66F1BE69DBE00220B79 /* Info.plist */,
-				3C1808C51BE74D24009E9A02 /* OBDII.swift */,
 				3C0EB6681BE69DBE00220B79 /* MainViewController.swift */,
-				3CC4A9971BF6869600044B42 /* OBDIIPID.swift */,
 			);
 			path = "OBD-II";
+			sourceTree = "<group>";
+		};
+		3C2B59781C2B5CDB0042EB73 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				3C2B59791C2B5CDB0042EB73 /* OBDII.swift */,
+				3C2B597A1C2B5CDB0042EB73 /* OBDIIPID.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		3C2B597B1C2B5CDB0042EB73 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				3C2B597C1C2B5CDB0042EB73 /* Array+Remove.swift */,
+				3C2B597D1C2B5CDB0042EB73 /* String+Split.swift */,
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 		3CC4A99E1BF688E500044B42 /* OBD-IITests */ = {
@@ -204,9 +228,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C0EB6691BE69DBE00220B79 /* MainViewController.swift in Sources */,
+				3C2B59811C2B5CDB0042EB73 /* String+Split.swift in Sources */,
+				3C2B59801C2B5CDB0042EB73 /* Array+Remove.swift in Sources */,
+				3C2B597F1C2B5CDB0042EB73 /* OBDIIPID.swift in Sources */,
+				3C2B597E1C2B5CDB0042EB73 /* OBDII.swift in Sources */,
 				3C0EB6671BE69DBE00220B79 /* AppDelegate.swift in Sources */,
-				3CC4A9981BF6869600044B42 /* OBDIIPID.swift in Sources */,
-				3C1808C61BE74D24009E9A02 /* OBDII.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,10 +241,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				3CC4A9AF1BF6893900044B42 /* AppDelegate.swift in Sources */,
-				3CC4A9B51BF6893900044B42 /* OBDIIPID.swift in Sources */,
-				3CC4A9B01BF6893900044B42 /* OBDII.swift in Sources */,
+				3C2B59841C2B5CEF0042EB73 /* Array+Remove.swift in Sources */,
+				3C2B59821C2B5CEF0042EB73 /* OBDII.swift in Sources */,
 				3CC4A9A01BF688E500044B42 /* OBD_IITests.swift in Sources */,
 				3CC4A9B11BF6893900044B42 /* MainViewController.swift in Sources */,
+				3C2B59851C2B5CEF0042EB73 /* String+Split.swift in Sources */,
+				3C2B59831C2B5CEF0042EB73 /* OBDIIPID.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

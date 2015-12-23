@@ -14,19 +14,27 @@ import CoreFoundation
     func didDisconnect(obd: OBDII)
     func cantConnect(obd: OBDII)
     func didReceivedData(obd: OBDII, string: String)
+    func obdReadyStateChanged(obd: OBDII, readyState: Bool)
+    func didReceivedOBDValue(obd: OBDII, identifier: String, value: Double)
 }
 
 class OBDII : NSObject, NSStreamDelegate {
     weak var delegate: OBDIIDelegate?
     
-    let serverAddress = "192.168.0.10"
-    let serverPort: UInt32 = 35000
+    //let serverAddress = "192.168.0.10"
+    //let serverPort: UInt32 = 35000
     
-    //let serverAddress = "localhost"
-    //let serverPort: UInt32 = 3000
+    let serverAddress = "localhost"
+    let serverPort: UInt32 = 3000
   
     private var inStream: NSInputStream?
     private var outStream: NSOutputStream?
+    private var currentMessageBuffer = ""
+    private var isOBDReady = false {
+        didSet {
+            self.delegate?.obdReadyStateChanged(self, readyState: isOBDReady)
+        }
+    }
     
     func open() {
         self.close()
@@ -54,7 +62,7 @@ class OBDII : NSObject, NSStreamDelegate {
         self.outStream?.close()
     }
     
-    func write(data: String) -> Bool {
+    func write(var data: String) -> Bool {
         if data.isEmpty || self.outStream ==  nil {
             return false
         }
@@ -63,8 +71,14 @@ class OBDII : NSObject, NSStreamDelegate {
             return false
         }
  
+        data.append(Character("\r"))
         let length = data.lengthOfBytesUsingEncoding(NSASCIIStringEncoding)
-        return self.outStream!.write(data, maxLength: length) == length
+        if self.outStream!.write(data, maxLength: length) != length {
+            return false
+        }
+        
+        self.isOBDReady = false
+        return true
     }
     
     func stream(aStream: NSStream, handleEvent eventCode: NSStreamEvent) {
@@ -97,11 +111,29 @@ class OBDII : NSObject, NSStreamDelegate {
         
         var buffer = [UInt8](count: 1024, repeatedValue: 0)
         let length = stream.read(&buffer, maxLength: buffer.count)
-        if length == -1 || length == 0{
+        if length == -1 || length == 0 {
             self.delegate?.didDisconnect(self)
             return
         } else {
-            self.delegate?.didReceivedData(self, string: NSString(bytes: &buffer, length: length, encoding: NSASCIIStringEncoding)! as String)
+            let readedString = NSString(bytes: &buffer, length: length, encoding: NSASCIIStringEncoding)! as String
+            self.delegate?.didReceivedData(self, string: readedString)
+            self.processInputData(readedString)
         }
+    }
+    
+    func processInputData(data: String) {
+        let tokens = data.split("\r")
+        if tokens.last?.characters.last == ">" {
+            isOBDReady = true
+        }
+        
+        
+        for token in tokens {
+            if let obd = try? OBDIIPID.parseMessage(token) {
+                self.delegate?.didReceivedOBDValue(self, identifier: obd.0, value: obd.1)
+            }
+        }
+        
+        NSLog("DATA: \(data.split("\r\n"))")
     }
 }

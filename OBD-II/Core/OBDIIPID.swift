@@ -30,7 +30,7 @@ struct OBDIIPIDEntry {
     let processOBDValue: [UInt8] -> Double
     
     func createMessage() -> String {
-        return String(format: "%02X %02X 1\r", arguments: [mode, pid])
+        return String(format: "%02X %02X 1", arguments: [mode, pid])
     }
     
     func parseMessage(data: String) throws -> Double {
@@ -49,7 +49,7 @@ struct OBDIIPIDEntry {
             throw OBDIIPIDException.InvalidResponseLength
         }
         
-        if data[0] - 0x40 != self.mode {
+        if data[0] < 0x40 || data[0] - 0x40 != self.mode {
             throw OBDIIPIDException.InvalidHeader
         }
         
@@ -63,7 +63,7 @@ struct OBDIIPIDEntry {
 }
 
 class OBDIIPID {
-    let pidTable = [
+    static let pidTable = [
         OBDIIPIDEntry(mode: 0x01, pid: 0x04, responseLength: 1, identifier: OBDIIEngineLoadValue) { data in
             return (Double(data[0]) * 100.0) / 255.0
         },
@@ -85,7 +85,7 @@ class OBDIIPID {
         }
     ]
     
-    func createMessageForIdentifier(identifier: String) throws -> String {
+    class func createMessageForIdentifier(identifier: String) throws -> String {
         for entry in self.pidTable {
             if entry.identifier == identifier {
                 return entry.createMessage()
@@ -95,7 +95,7 @@ class OBDIIPID {
         throw OBDIIPIDException.UnknownIdentifier
     }
     
-    func parseMessage(string: String) throws -> (String, Double) {
+    class func parseMessage(string: String) throws -> (String, Double) {
         for entry in self.pidTable {
             if let value = try? entry.parseMessage(string) {
                 return (entry.identifier, value)
