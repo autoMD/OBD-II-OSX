@@ -29,10 +29,19 @@ class MainViewController: NSViewController, NSTextFieldDelegate, OBDIIDelegate {
 
     @IBAction func onSend(sender: AnyObject) {
         var text = self.inputTextField.stringValue
-        if text == "throttle" {
-            text = try! OBDIIPID.createMessageForIdentifier(OBDIIThrottleValue)
-        }
         
+        // Shortcuts
+        if let identifier = [
+            "load": OBDIIEngineLoadValue,
+            "temp": OBDIIEngineCoolantTemperature,
+            "trottle": OBDIIThrottleValue,
+            "rpm": OBDIIRPM,
+            "speed": OBDIISpeed,
+            "maf": OBDIIMAF
+            ][text] {
+                text = try! OBDIIPID.createMessageForIdentifier(identifier)
+        }
+    
         if obd.write(text) {
             self.inputTextField.stringValue = ""
         } else {
