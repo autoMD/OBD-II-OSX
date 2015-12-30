@@ -90,7 +90,7 @@ class MainViewController: NSViewController, NSTextFieldDelegate, OBDIIDelegate {
         self.appendLogText("OBD ready state changed \(readyState)")
         
         if readyState {
-            try? obd.write(OBDIIPID.createMessageForIdentifier(OBDIIThrottleValue))
+            let _ = try? obd.write(OBDIIPID.createMessageForIdentifier(OBDIIThrottleValue))
         }
     }
     
