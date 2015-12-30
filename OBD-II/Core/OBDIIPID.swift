@@ -13,6 +13,7 @@ let OBDIIEngineCoolantTemperature = "Engine Coolant Temperature"
 let OBDIIThrottleValue = "Trottle Value"
 let OBDIIRPM = "RPM"
 let OBDIISpeed = "Speed"
+let OBDIIMAF = "MAF"
 
 enum OBDIIPIDException: ErrorType {
     case InvalidData
@@ -76,12 +77,16 @@ class OBDIIPID {
             return ((Double(data[0]) * 256.0) + Double(data[1])) / 4.0
         },
         
-        OBDIIPIDEntry(mode: 0x01, pid: 0x1C, responseLength: 2, identifier: OBDIIRPM) { data in
+        OBDIIPIDEntry(mode: 0x01, pid: 0x0C, responseLength: 2, identifier: OBDIIRPM) { data in
             return ((Double(data[0]) * 256.0) + Double(data[1])) / 4.0
         },
         
-        OBDIIPIDEntry(mode: 0x01, pid: 0x1D, responseLength: 1, identifier: OBDIISpeed) { data in
+        OBDIIPIDEntry(mode: 0x01, pid: 0x0D, responseLength: 1, identifier: OBDIISpeed) { data in
             return Double(data[0])
+        },
+        
+        OBDIIPIDEntry(mode: 0x01, pid: 0x10, responseLength: 2, identifier: OBDIIMAF) { data in
+            return ((Double(data[0]) * 256.0) + Double(data[1])) / 100.0
         }
     ]
     
